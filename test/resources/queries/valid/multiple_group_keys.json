@@ -1,0 +1,46 @@
+{
+	"title": "multiple group keys",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"NOT": {
+						"IS": {
+							"sections_dept": "math"
+						}
+					}
+				},
+				{
+					"NOT": {
+						"GT": {
+							"sections_avg": 50
+						}
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_title",
+				"numInstructor"
+			],
+			"ORDER": "sections_dept"
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"sections_dept",
+				"sections_title"
+			],
+			"APPLY": [
+				{
+					"numInstructor": {
+						"COUNT": "sections_instructor"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected":[{"sections_dept":"busi","sections_title":"found re apprai","numInstructor":1},{"sections_dept":"busi","sections_title":"stat&comp ap val","numInstructor":1},{"sections_dept":"busi","sections_title":"resdnt prp study","numInstructor":1},{"sections_dept":"busi","sections_title":"rl es manage i","numInstructor":1},{"sections_dept":"busi","sections_title":"cpt aid ms pr as","numInstructor":1},{"sections_dept":"busi","sections_title":"re crit analysis","numInstructor":1},{"sections_dept":"chbe","sections_title":"proc ctrl eng","numInstructor":1},{"sections_dept":"chbe","sections_title":"electrochem eng","numInstructor":2},{"sections_dept":"chem","sections_title":"chem integ lab i","numInstructor":1},{"sections_dept":"civl","sections_title":"engr econ anlys","numInstructor":1},{"sections_dept":"civl","sections_title":"wtr treat&wst mg","numInstructor":1},{"sections_dept":"comm","sections_title":"financial acctng","numInstructor":2},{"sections_dept":"educ","sections_title":"language & curr","numInstructor":2},{"sections_dept":"fopr","sections_title":"sustnbt&frst ops","numInstructor":1},{"sections_dept":"frst","sections_title":"forest ecology","numInstructor":1},{"sections_dept":"frst","sections_title":"intr biometrics","numInstructor":1},{"sections_dept":"hist","sections_title":"hist 1500 - 20 c","numInstructor":2},{"sections_dept":"lfs","sections_title":"in land food com","numInstructor":1},{"sections_dept":"lled","sections_title":"intro acad writ","numInstructor":3},{"sections_dept":"phil","sections_title":"log & crit think","numInstructor":1},{"sections_dept":"psyc","sections_title":"health psycholgy","numInstructor":1},{"sections_dept":"psyc","sections_title":"childhood & adol","numInstructor":1},{"sections_dept":"wood","sections_title":"prpty,ident&uses","numInstructor":1}]
+	}

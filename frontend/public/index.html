@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="style.css" rel="stylesheet"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>310 Frontend - Section Insights</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+
+<div class="top-bar">
+	<button id="add" class="button">Add New Dataset!</button>
+	<h1 id="site-title">Section Insights</h1>
+
+</div>
+<div class = "realBody">
+<div id="myModal" class="modal hidden">
+	<div class="modal-content">
+			<span id="closeModal" class="close">&times;</span>
+			<form id="modalForm">
+				<p>
+					<label for="textInput">Dataset ID:</label>
+					<input type="text" id="textInput" name="textInput">
+				</p>
+				<p>
+					<label for="fileInput">Upload Dataset Zip:</label>
+					<input type="file" id="fileInput" name="fileInput" accept=".zip">
+				</p>
+				<p>
+					<label for="selectBox">Choose Dataset Type:</label>
+					<select id="selectBox" name="selectBox">
+						<option value="">-please-select-a-kind</option>
+						<option value="sections">Sections</option>
+					</select>
+				</p>
+
+				<p id="submitContainer">
+					<button id="submitAddDataset" class="button">Submit</button>
+					<div id="statusMessage" class="hidden"></div>
+				</p>
+			</form>
+		</div>
+
+</div>
+<div id="DisplayModal" class="modal hidden">
+	<div id="DisplayModal-content" class="modal-content">
+		<div id="chartContainer1" class="chart-container"></div>
+		<div id="chartContainer2" class="chart-container"></div>
+		<div id="chartContainer3" class="chart-container"></div>
+	</div>
+</div>
+<div id="datasetContainer">
+	<div id = "listTitle" class = "lineDataset">
+		<p>Dataset ID </p>
+		<div>
+			Operation
+		</div>
+
+	</div>
+
+</div>
+<div id="successPanel"></div>
+<div id="errorPanel"></div>
+<script type="module" src="frontend.js"></script>
+</div>
+</body>
+</html>

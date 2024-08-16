@@ -1,0 +1,41 @@
+{
+	"title": "valid query with UP direction",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"sections_avg": 90
+					}
+				},
+				{
+					"IS": {
+						"sections_dept": "*ab*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": ["sections_avg"]
+				}
+			}
+
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_dept": "babs",
+			"sections_avg": 91.38
+		},
+		{
+			"sections_dept": "babs",
+			"sections_avg": 91.38
+		}
+	]
+}

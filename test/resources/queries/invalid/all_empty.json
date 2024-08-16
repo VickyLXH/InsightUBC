@@ -1,0 +1,13 @@
+{
+  "title": "Query missing All",
+  "input": {
+    "WHERE": {
+      "AND": []
+    },
+    "OPTIONS": {
+      "COLUMNS": []
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

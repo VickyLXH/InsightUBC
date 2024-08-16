@@ -1,0 +1,45 @@
+{
+  "title": "invalid query with two asterisks",
+  "input": {
+    "WHERE": {
+      "OR": [
+        {
+          "AND": [
+            {
+              "GT": {
+                "sections_avg": 90
+              }
+            },
+            {
+              "IS": {
+                "sections_dept": "adh**"
+              }
+            },
+            {
+              "LT": {
+                "sections_avg": 96
+              }
+            }
+          ]
+        },
+        {
+          "EQ": {
+            "sections_avg": 95
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_id",
+        "sections_avg",
+        "sections_year"
+      ],
+      "ORDER": "sections_year"
+
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

@@ -1,0 +1,69 @@
+{
+  "title": "valid two AND query",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "AND": [
+            {
+              "GT": {
+                "sections_avg": 90
+              }
+            },
+            {
+              "IS": {
+                "sections_dept": "*a"
+              }
+            }
+          ]
+        },
+        {
+          "LT": {
+            "sections_avg": 95
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_id",
+        "sections_avg"
+      ],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": false,
+  "expected": [
+    {
+      "sections_dept": "bota",
+      "sections_id": "501",
+      "sections_avg": 90.71
+    },
+    {
+      "sections_dept": "bota",
+      "sections_id": "501",
+      "sections_avg": 90.71
+    },
+    {
+      "sections_dept": "bota",
+      "sections_id": "544",
+      "sections_avg": 91
+    },
+    {
+      "sections_dept": "bota",
+      "sections_id": "544",
+      "sections_avg": 91
+    },
+    {
+      "sections_dept": "bota",
+      "sections_id": "528",
+      "sections_avg": 92
+    },
+    {
+      "sections_dept": "bota",
+      "sections_id": "528",
+      "sections_avg": 92
+    }
+  ]
+}

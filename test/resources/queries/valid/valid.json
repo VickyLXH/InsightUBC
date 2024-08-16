@@ -1,0 +1,33 @@
+{
+	"WHERE": {
+		"AND": [
+			{
+				"AND": [
+					{
+						"GT": {
+							"sections_year": 2014
+						}
+					},
+					{
+						"LT": {
+							"sections_avg": 90
+						}
+					}
+				]
+			},
+			{
+				"EQ": {
+					"sections_pass": 50
+				}
+			}
+		]
+	},
+	"OPTIONS": {
+		"COLUMNS": [
+			"sections_dept",
+			"sections_id",
+			"sections_avg"
+		],
+		"ORDER": "sections_avg"
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "title": "test query with empty mkey",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "sections_avg": []
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_avg"
+      ],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}

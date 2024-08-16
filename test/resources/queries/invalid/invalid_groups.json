@@ -1,0 +1,37 @@
+{
+	"title": "invalid groups",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"sections_avg": 90
+					}
+				},
+				{
+					"IS": {
+						"sections_dept": "*ab*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": ["sections_avg"]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["invalidgroups"],
+			"APPLY": [{"overallAvg":  { "AVG":  "sections_avg"}}]
+
+		}
+
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

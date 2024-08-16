@@ -1,0 +1,23 @@
+{
+	"WHERE": {
+		"AND": [
+			{
+				"GT": {
+					"sections_avg": 90
+				}
+			},
+			{
+				"IS": {
+					"sections_dept": "*a"
+				}
+			}
+		]
+	},
+	"OPTIONS": {
+		"COLUMNS": [
+			"sections_dept",
+			"sections_avg"
+		],
+		"ORDER": "sections_avg"
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "title": "test query without OPTIONS",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "invalid query with asterisks in middle",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "GT": {
+            "sections_avg": 90
+          }
+        },
+        {
+          "IS": {
+            "sections_dept": "ad*he"
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_avg"
+      ],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}

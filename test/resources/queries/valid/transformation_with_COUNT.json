@@ -1,0 +1,44 @@
+{
+	"title": "transformation with COUNT",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"NOT": {
+						"IS": {
+							"sections_dept": "math"
+						}
+					}
+				},
+				{
+					"NOT": {
+						"GT": {
+							"sections_avg": 50
+						}
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"numInstructor"
+			],
+			"ORDER": "sections_dept"
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"sections_dept"
+			],
+			"APPLY": [
+				{
+					"numInstructor": {
+						"COUNT": "sections_instructor"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected":[{"sections_dept":"busi","numInstructor":1},{"sections_dept":"chbe","numInstructor":2},{"sections_dept":"chem","numInstructor":1},{"sections_dept":"civl","numInstructor":1},{"sections_dept":"comm","numInstructor":2},{"sections_dept":"educ","numInstructor":2},{"sections_dept":"fopr","numInstructor":1},{"sections_dept":"frst","numInstructor":2},{"sections_dept":"hist","numInstructor":2},{"sections_dept":"lfs","numInstructor":1},{"sections_dept":"lled","numInstructor":3},{"sections_dept":"phil","numInstructor":1},{"sections_dept":"psyc","numInstructor":2},{"sections_dept":"wood","numInstructor":1}]
+	}

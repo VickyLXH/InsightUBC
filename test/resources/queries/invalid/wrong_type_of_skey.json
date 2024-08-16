@@ -1,0 +1,28 @@
+{
+  "title": "test query with wrong skey type",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "GT": {
+            "sections_avg": 97
+          }
+        },
+        {
+          "IS": {
+            "sections_dept": 100
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_avg"
+      ],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}

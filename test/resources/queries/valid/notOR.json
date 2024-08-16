@@ -1,0 +1,30 @@
+{
+	"title": "valid NOT OR query",
+	"input": {
+		"WHERE": {
+			"NOT": {
+				"OR": [
+					{
+						"LT": {
+							"sections_avg": 97
+						}
+					},
+					{
+						"GT": {
+							"sections_avg": 98
+						}
+					}
+				]}}
+	,
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_id",
+				"sections_avg"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"sections_dept":"psyc","sections_id":"549","sections_avg":97},{"sections_dept":"epse","sections_id":"534","sections_avg":97},{"sections_dept":"crwr","sections_id":"599","sections_avg":97},{"sections_dept":"math","sections_id":"541","sections_avg":97.09},{"sections_dept":"math","sections_id":"541","sections_avg":97.09},{"sections_dept":"epse","sections_id":"596","sections_avg":97.09},{"sections_dept":"epse","sections_id":"596","sections_avg":97.09},{"sections_dept":"math","sections_id":"525","sections_avg":97.25},{"sections_dept":"math","sections_id":"525","sections_avg":97.25},{"sections_dept":"epse","sections_id":"421","sections_avg":97.29},{"sections_dept":"epse","sections_id":"421","sections_avg":97.29},{"sections_dept":"nurs","sections_id":"591","sections_avg":97.33},{"sections_dept":"nurs","sections_id":"591","sections_avg":97.33},{"sections_dept":"epse","sections_id":"534","sections_avg":97.41},{"sections_dept":"epse","sections_id":"449","sections_avg":97.41},{"sections_dept":"cnps","sections_id":"574","sections_avg":97.47},{"sections_dept":"cnps","sections_id":"574","sections_avg":97.47},{"sections_dept":"math","sections_id":"532","sections_avg":97.48},{"sections_dept":"math","sections_id":"532","sections_avg":97.48},{"sections_dept":"educ","sections_id":"500","sections_avg":97.5},{"sections_dept":"nurs","sections_id":"578","sections_avg":97.53},{"sections_dept":"nurs","sections_id":"578","sections_avg":97.53},{"sections_dept":"epse","sections_id":"606","sections_avg":97.67},{"sections_dept":"epse","sections_id":"549","sections_avg":97.69},{"sections_dept":"epse","sections_id":"534","sections_avg":97.78},{"sections_dept":"crwr","sections_id":"599","sections_avg":98},{"sections_dept":"crwr","sections_id":"599","sections_avg":98}]
+}

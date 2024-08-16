@@ -1,0 +1,47 @@
+{
+	"title": "valid with transformation and DOWN direction",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"NOT": {
+						"IS": {
+							"sections_dept": "math"
+						}
+					}
+				},
+				{
+					"NOT": {
+						"GT": {
+							"sections_avg": 50
+						}
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"overallAvg"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": ["sections_dept"]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"sections_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "sections_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"sections_dept":"wood","overallAvg":1},{"sections_dept":"psyc","overallAvg":46.66},{"sections_dept":"phil","overallAvg":33.2},{"sections_dept":"lled","overallAvg":48.72},{"sections_dept":"lfs","overallAvg":0},{"sections_dept":"hist","overallAvg":44.59},{"sections_dept":"frst","overallAvg":31.91},{"sections_dept":"fopr","overallAvg":4.5},{"sections_dept":"educ","overallAvg":39.03},{"sections_dept":"comm","overallAvg":47.89},{"sections_dept":"civl","overallAvg":41.13},{"sections_dept":"chem","overallAvg":42.5},{"sections_dept":"chbe","overallAvg":45.63},{"sections_dept":"busi","overallAvg":38.48}]
+	}

@@ -1,0 +1,27 @@
+{
+  "title": "test query with missing skey",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "GT": {
+            "sections_avg": 97
+          }
+        },
+        {
+          "IS": {
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "sections_avg"
+      ],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}

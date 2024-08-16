@@ -1,0 +1,16 @@
+{
+  "title": "invalid query with empty columns",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "sections_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [],
+      "ORDER": "sections_avg"
+    }
+  },
+  "errorExpected": true,
+  "with": "InsightError"
+}
